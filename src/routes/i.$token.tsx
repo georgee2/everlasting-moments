@@ -70,8 +70,9 @@ function InvalidInvite() {
   );
 }
 
-function Invitation({ data, token }: { data: NonNullable<LoaderData>; token: string }) {
-  const { invite, events, settings, gallery } = data;
+function Invitation({ data, token }: { data: LoaderData; token: string }) {
+  const invite = data.invite!;
+  const { events, settings, gallery } = data;
   const { lang, setLang } = useLang();
   const t = useT();
   const [opened, setOpened] = useState(false);
@@ -405,7 +406,8 @@ function Gallery({ items }: { items: string[] }) {
   );
 }
 
-function RsvpForm({ token, invite }: { token: string; invite: { rsvp_status: string; attendee_count: number; plus_one: boolean; rsvp_message: string | null } }) {
+type InviteRow = NonNullable<LoaderData["invite"]>;
+function RsvpForm({ token, invite }: { token: string; invite: InviteRow }) {
   const t = useT();
   const navigate = useNavigate();
   const submit = useServerFn(submitRsvp);
