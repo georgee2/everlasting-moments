@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merna &amp; George — A Cinematic Wedding Invitation</title>
+  <meta name="description" content="You're invited to celebrate the wedding of Merna &amp; George. Together, forever begins." />
+  <meta property="og:title" content="Merna &amp; George — Wedding Invitation" />
+  <meta property="og:description" content="Together, forever begins." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating petals -->
+  <div class="petals" aria-hidden="true" id="petals"></div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero" id="welcome">
+    <div class="hero-bg" style="background-image: url('assets/hero.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-content" id="hero-closed">
+      <p class="eyebrow hero-fade" style="animation-delay: 0.4s">An Invitation</p>
+      <h1 class="hero-names hero-fade" style="animation-delay: 0.7s">Merna &amp; George</h1>
+      <p class="hero-tagline hero-fade" style="animation-delay: 1.6s">Together, forever begins</p>
+      <button class="hero-btn hero-fade" style="animation-delay: 2.2s" id="open-btn">Open Invitation</button>
+    </div>
+
+    <div class="hero-content hidden" id="hero-opened">
+      <p class="eyebrow">November 10, 2026</p>
+      <h1 class="hero-names">Merna &amp; George</h1>
+      <p class="hero-tagline">Together, forever begins</p>
+      <div class="scroll-arrow" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12m0 0l-5-5m5 5l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ INVITATION BODY (hidden until opened) ═══════════════ -->
+  <div id="invitation-body" class="hidden">
+
+    <!-- Personal Welcome -->
+    <section class="section text-center">
+      <div class="reveal">
+        <p class="eyebrow">Dear Guest</p>
+        <h2 class="section-title">Welcome</h2>
+        <p class="section-text">We would be honoured to have you share in the joy of our wedding day. Your presence would make our celebration truly complete.</p>
+      </div>
+      <div class="divider" aria-hidden="true"><span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span></div>
+    </section>
+
+    <!-- Countdown -->
+    <section class="section">
+      <div class="reveal">
+        <p class="eyebrow text-center">Counting Down</p>
+        <div class="countdown-grid" id="countdown-timer">
+          <div class="countdown-card glass">
+            <div class="countdown-value" id="cd-days">000</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-card glass">
+            <div class="countdown-value" id="cd-hours">00</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-card glass">
+            <div class="countdown-value" id="cd-minutes">00</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-card glass">
+            <div class="countdown-value" id="cd-seconds">00</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section">
+      <div class="reveal">
+        <h2 class="section-title text-center">Our Story</h2>
+        <div class="divider" aria-hidden="true"><span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span></div>
+      </div>
+      <div class="story-timeline">
+        <div class="story-item reveal">
+          <div class="story-year">2019</div>
+          <div>
+            <h3 class="story-title">How we met</h3>
+            <p class="story-body">A quiet evening, an unforgettable conversation.</p>
+          </div>
+        </div>
+        <div class="story-item reveal" style="transition-delay: 150ms">
+          <div class="story-year">2022</div>
+          <div>
+            <h3 class="story-title">The proposal</h3>
+            <p class="story-body">Under the stars, two became one promise.</p>
+          </div>
+        </div>
+        <div class="story-item reveal" style="transition-delay: 300ms">
+          <div class="story-year">2026</div>
+          <div>
+            <h3 class="story-title">Forever</h3>
+            <p class="story-body">We can't wait to share this day with you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section">
+      <div class="reveal">
+        <h2 class="section-title text-center">Gallery</h2>
+        <div class="divider" aria-hidden="true"><span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span></div>
+      </div>
+      <div class="gallery-masonry reveal">
+        <div class="gallery-item"><img src="assets/g1.jpg" alt="" loading="lazy" /></div>
+        <div class="gallery-item"><img src="assets/g2.jpg" alt="" loading="lazy" /></div>
+        <div class="gallery-item"><img src="assets/g3.jpg" alt="" loading="lazy" /></div>
+        <div class="gallery-item"><img src="assets/g4.jpg" alt="" loading="lazy" /></div>
+        <div class="gallery-item"><img src="assets/hero.jpg" alt="" loading="lazy" /></div>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section class="section">
+      <div class="reveal">
+        <h2 class="section-title text-center">The Day</h2>
+        <div class="divider" aria-hidden="true"><span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span></div>
+      </div>
+      <div class="events-grid">
+        <div class="event-card glass reveal">
+          <p class="event-time">5:00 PM</p>
+          <h3 class="event-title">The Ceremony</h3>
+          <p class="event-desc">Join us as we exchange our vows</p>
+          <div class="event-footer">
+            <span>St. George and Anba Ebram</span>
+            <a href="https://maps.app.goo.gl/H1WdsBZTX1UfzVN18" target="_blank" rel="noopener noreferrer" class="event-map-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Location
+            </a>
+          </div>
+        </div>
+        <div class="event-card glass reveal" style="transition-delay: 100ms">
+          <p class="event-time">7:00 PM</p>
+          <h3 class="event-title">The Celebration</h3>
+          <p class="event-desc">Dinner, dancing, and a night to remember</p>
+          <div class="event-footer">
+            <span>Crystal Palace Hall</span>
+            <a href="https://maps.app.goo.gl/x4aTF9q6QFmPABNBA" target="_blank" rel="noopener noreferrer" class="event-map-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Location
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dress Code -->
+    <section class="section text-center">
+      <div class="reveal">
+        <h2 class="section-title">Dress Code</h2>
+        <div class="divider" aria-hidden="true"><span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span></div>
+        <div class="dress-swatches">
+          <div class="swatch" style="background-color: #f5efe4"></div>
+          <div class="swatch" style="background-color: #e8dcc4"></div>
+          <div class="swatch" style="background-color: #c9b896"></div>
+          <div class="swatch" style="background-color: #8b6f4e"></div>
+          <div class="swatch" style="background-color: #1a1612"></div>
+        </div>
+        <p class="dress-note">Cocktail attire · warm neutral tones</p>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section">
+      <div class="reveal">
+        <h2 class="section-title text-center">R.S.V.P.</h2>
+        <div class="divider" aria-hidden="true"><span class="divider-line"></span><span class="divider-dot"></span><span class="divider-line"></span></div>
+        <div class="rsvp-card glass">
+          <div class="rsvp-buttons">
+            <button class="rsvp-choice" data-value="accepted">Joyfully Accepts</button>
+            <button class="rsvp-choice" data-value="declined">Regretfully Declines</button>
+          </div>
+          <div class="rsvp-extra hidden" id="rsvp-extra">
+            <label class="rsvp-label">Number of Guests</label>
+            <input type="number" min="1" max="4" value="1" class="rsvp-input" />
+          </div>
+          <div>
+            <label class="rsvp-label">Message (optional)</label>
+            <textarea class="rsvp-textarea" maxlength="500" rows="3" placeholder="..."></textarea>
+          </div>
+          <button class="rsvp-submit" disabled id="rsvp-submit">Submit</button>
+          <div class="rsvp-thanks hidden" id="rsvp-thanks">
+            <p>Thank you for your response! 💛</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thank You Footer -->
+    <section class="section text-center thank-you">
+      <div class="reveal">
+        <svg class="sparkle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l2.09 6.26L20 10.27l-4.74 3.73L16.18 22 12 18.56 7.82 22l.92-7.99L4 10.27l5.91-2.01L12 2z" fill="currentColor"/>
+        </svg>
+        <p class="thanks-message">Your presence is the greatest gift we could ever ask for. We can't wait to celebrate with you.</p>
+        <p class="thanks-names">Merna &amp; George</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox hidden" id="lightbox" aria-hidden="true">
+    <img src="" alt="Full-size preview" id="lightbox-img" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
